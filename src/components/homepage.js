@@ -51,10 +51,10 @@ function Home() {
                     } else if (res.data.weather[0].main === "Rain") {
                         
                         setImage(rain)
-                    } else if (res.data.weather[0].main == "Drizzle") {
+                    } else if (res.data.weather[0].main === "Drizzle") {
                         
                         setImage(drizzle)
-                    } else if (res.data.weather[0].main == "Mist") {
+                    } else if (res.data.weather[0].main === "Mist") {
                         
                         setImage(mist)
                     } else {
@@ -73,7 +73,7 @@ function Home() {
                     setError('');
                 })
                 .catch(err => {
-                    if (err.response.status == 404) {
+                    if (err.response.status === 404) {
                         setError("Invalid City Name")
                     } else {
                         setError('');
