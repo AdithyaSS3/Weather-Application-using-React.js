@@ -24,7 +24,7 @@ function Home() {
     const [image, setImage] = useState(cloudsIcon);
 
     useEffect(function () {
-        console.log("hi karthick")
+        console.log("Adithya SS")
         handleClick();
     }, [])
     const handleKeyDown = (e) => {
@@ -36,29 +36,29 @@ function Home() {
     const handleClick = () => {
         console.log("adithya")
         if (name !== "") {
-            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=3f1bf96fc24d3786134de758d49902c8&&unit=metric`;
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=3f1bf96fc24d3786134de758d49902c8&&unit=metrics`;
 
             axios.get(apiUrl)
                 .then(res => {
-                    //  let imagePath = '';
+                    
                     console.log(res.data)
                     if (res.data.weather[0].main === "clouds") {
-                        //  imagePath = "./images/cloudsIcon.png"
+                        
                         setImage(cloudsIcon)
                     } else if (res.data.weather[0].main === "Clear") {
-                        //   imagePath = "./images/sunLight.webp"
+                        
                         setImage(clear)
                     } else if (res.data.weather[0].main === "Rain") {
-                        //   imagePath = "./images/rain.png"
+                        
                         setImage(rain)
                     } else if (res.data.weather[0].main == "Drizzle") {
-                        //   imagePath = "./images/drizzle.webp"
+                        
                         setImage(drizzle)
                     } else if (res.data.weather[0].main == "Mist") {
-                        //   imagePath = "./images/snowIcon.webp"
+                        
                         setImage(mist)
                     } else {
-                        //   imagePath = './images/cloudsIcon.png'
+                        
                         setImage(cloudsIcon)
                     }
 
@@ -66,7 +66,7 @@ function Home() {
                     console.log({ ...data, name: data.name })
                     console.log(res.data.weather[0].main)
                     setData({
-                        ...data, celcius: res.data.main.temp, name: res.data.name,
+                        ...data, celcius: Math.round(res.data.main.temp), name: res.data.name,
                         humidity: res.data.main.humidity, speed: res.data.wind.speed
                     })
 
