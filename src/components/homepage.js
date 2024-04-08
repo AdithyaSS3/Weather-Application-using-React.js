@@ -24,7 +24,6 @@ function Home() {
     const [image, setImage] = useState(cloudsIcon);
 
     useEffect(function () {
-        console.log("Adithya SS")
         handleClick();
     }, )
     const handleKeyDown = (e) => {
