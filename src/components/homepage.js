@@ -26,7 +26,7 @@ function Home() {
     useEffect(function () {
         console.log("Adithya SS")
         handleClick();
-    }, [])
+    }, )
     const handleKeyDown = (e) => {
         if (e.key === "Enter") {
             handleClick();
